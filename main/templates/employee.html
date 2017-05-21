@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block head %}
+    <style type="text/css">
+        .table>tbody>tr>td {
+            border-top: 0px;
+        }
+        input {
+            width:250px;
+        }
+    </style>
+{% endblock %}
+{%  block content %}
+    <table class="table">
+        <caption></caption>
+        <col width="120px">
+        <tr>
+            <td><p>Имя:</p></td>
+            <td><input type="text" disabled value="{{ employee.first_name }}"/></td>
+        </tr>
+        <tr>
+            <td><p>Фамилия:</p></td>
+            <td><input type="text" disabled value="{{ employee.second_name }}"/></td>
+        </tr>
+        <tr>
+            <td><p>Дата рождения:</p></td>
+            <td><input type="text" disabled value="{{ employee.birthday }}"/></td>
+        </tr>
+        <tr>
+            <td><p>Email:</p></td>
+            <td><input type="text" disabled value="{{ employee.email }}"/></td>
+        </tr>
+        <tr>
+            <td><p>Дата начала работы:</p></td>
+            <td><input type="text" disabled value="{{ employee.start_date }}"/></td>
+        </tr>
+        <tr>
+            <td><p>Дата окончания работы:</p></td>
+            <td><input type="text" disabled value="{{ employee.finish_date|default_if_none:"" }}"/></td>
+        </tr>
+        <tr>
+            <td><p>Должность:</p></td>
+            <td><input type="text" disabled value="{{ employee.position }}"/></td>
+        </tr>
+            <td ><p>Отдел:</p></td>
+            <td ><input type="text" disabled value="{{ employee.department }}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="padding-left: 300px;"><button type="button" class="btn btn-primary"
+                onclick="javascript:history.go(-1);">Вернуться</button>
+            </td>
+        </tr>
+        </table>
+{% endblock %}

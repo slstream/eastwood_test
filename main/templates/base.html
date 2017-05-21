@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Eastwood</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div class="container">
+        <header class="row" style="height:80px; border:1px solid black;">
+            <div><p>header</p></div>
+        </header>
+        <main class="row" style="min-height:300px; border:1px solid black;">
+            {% block content %}{% endblock %}
+        </main>
+        <footer class="row" style="height:80px; border:1px solid black;">
+            <p>footer</p>
+        </footer>
+    </div>
+</body>
+</html>
