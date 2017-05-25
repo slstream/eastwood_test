@@ -14,6 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -25,7 +26,6 @@ ALLOWED_HOSTS = []
 ADMINS = (
     ('Yuriy Fadeev', 'yfadeev@gmail.com'),
 )
-
 
 INSTALLED_APPS = [
     # Django Applications
@@ -102,6 +102,13 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
+SERVER = os.getenv('SERVER')
+if SERVER == 'production':
+    try:
+        from .heroku_settings import *
+    except ImportError:
+        pass
 
 try:
     from .local_settings.local_settings import *

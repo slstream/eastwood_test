@@ -1,0 +1,1 @@
+web: gunicorn eastwood_test.wsgi --log-file -
